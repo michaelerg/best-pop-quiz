@@ -98,11 +98,12 @@ function showQuestions () {
  // choices.textContent = popquizquestions[0].question
 
 }
+let highScore = 0;
  function answerClick() {
     console.log(this.textContent)
     let chosenAnswer = this.textContent
     if (chosenAnswer ===popquizquestions[questionIndex].correctAnswer) {
-     console.log("correct answer")
+     highScore = highScore + 1;
      alert('Correct answer')
      questionIndex+= 1
      showQuestions()

@@ -134,8 +134,7 @@ function showQuestions () {
 
 // Action to be performed on click store in named function
 function endQuiz(event) {
-    // Prevent default action
-    event.preventDefault();
+    
     console.log(event);
     const response = "Thank you for your submitting your answers " + nameInput.value + "! Your HighScore " + emailInput.value + ".";
     submissionResponseEl.textContent = response;

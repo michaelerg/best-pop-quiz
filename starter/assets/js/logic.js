@@ -105,13 +105,16 @@ let highScore = 0;
     if (chosenAnswer ===popquizquestions[questionIndex].correctAnswer) {
      highScore = highScore + 1;
      alert('Correct answer')
-     questionIndex+= 1
-     showQuestions()
- }
-    else {
-        console.log("wrong answer")
-        alert('Wrong answer')
-        //cut down time by 10 seconds#################
+
+      if (questionIndex < popquizquestions.length - 1) {
+      questionIndex += 1;
+      showQuestions();
+    } else {
+      endQuiz();
+    }
+  } else {
+    alert("Wrong answer");
+    secondsLeft = secondsLeft - 10;
     }
  }
 

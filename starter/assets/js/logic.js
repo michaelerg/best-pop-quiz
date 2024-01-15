@@ -133,11 +133,12 @@ function showQuestions () {
 
 
 // Action to be performed on click store in named function
-function endQuiz(event) {
-    
-    console.log(event);
-    const response = "Thank you for your submitting your answers " + nameInput.value + "! Your HighScore " + emailInput.value + ".";
-    submissionResponseEl.textContent = response;
+function endQuiz() {
+    const response =
+    "Thank you for your submitting your answers! " +
+    " Your HighScore is " + highScore;
+
+  alert(response);
   }
 
 

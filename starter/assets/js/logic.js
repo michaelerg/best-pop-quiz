@@ -31,12 +31,6 @@ const popquizquestions = [
  let questionIndex = 0
  let questionsHTML = document.getElementById("questions")
 
-// Create a code quiz that contains the following requirements:
-// A start button that when clicked a timer starts and the first question appears.
-
-// const quizEl = document.querySelector("#quiz");
-// // Add listener to submit element
-// quizEl.addEventListener("click", endQuiz);
 
 const timeEl = document.querySelector("#time");
 
@@ -78,11 +72,7 @@ function showQuestions () {
 
 
    let choices = document.getElementById("choices")
-// for (i=0; i < popquizquestions.length; i++)  {
-//     let questionTitle = document.getElementById("question-title")
-//     questionTitle.textContent = popquizquestions[questionIndex].question
 
- //clear 
    choices.innerHTML = "";
    for (i=0; i < popquizquestions[questionIndex].options.length; i++) {
     let button = document.createElement("button")
@@ -92,14 +82,6 @@ function showQuestions () {
     button.onclick = answerClick
    }
 
-//    }
-
-   //variable that holds their answer
- 
-   //then compare with correct answer
-  // let userAnswer = document.getElementById().value
-  // if 
- // choices.textContent = popquizquestions[0].question
 
 }
 let highScore = 0;
@@ -131,22 +113,6 @@ function saveHighscore(){
    console.log(initials, highScore)
    
 }
- // if time = 0 then ##################
-
-//DISPLAY OF OPTIONS (BUTTONS)
-//WHEN BUTTON IS PRESSED THE NEXT QUESTION
-
-//eventlistenr for all the answers
-//
-//IF THE ANSWER IS INCORRECT SUBTRACT TIME FROM CLOCK
-//IF TIME IS FINISHED END QUIZ (FUNCTION)
-
-
-//check if the answer is  correct then next question
-//count the score
-// variables that holds 
-
-
 
 // Action to be performed on click store in named function
 function endQuiz() {

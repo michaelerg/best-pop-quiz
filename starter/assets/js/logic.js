@@ -45,15 +45,19 @@ function startQuiz(event) {
     showQuestions()
 }
 
-let secondsLeft = 10
+let secondsLeft = 60
 function setTime(){
 const timer = setInterval(function(){
     console.log(secondsLeft)
     secondsLeft--;
     timeEl.textContent = secondsLeft +" seconds";
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
+    secondsLeft = 0;
+      endQuiz();
     clearInterval(timer);
- }
+    choices.innerHTML = "";
+   // questionTitle.innerHTML = ""
+    }
 }, 1000);
 }
 
@@ -79,7 +83,7 @@ function showQuestions () {
 //     questionTitle.textContent = popquizquestions[questionIndex].question
 
  //clear 
-
+   choices.innerHTML = "";
    for (i=0; i < popquizquestions[questionIndex].options.length; i++) {
     let button = document.createElement("button")
    // button.setAttribute('value', popquizquestions[0].options[i])
@@ -111,14 +115,22 @@ let highScore = 0;
       showQuestions();
     } else {
       endQuiz();
+      //clearInterval(timer);
+      choices.innerHTML = "";
+      //questionTitle.innerHTML = ""
     }
   } else {
     alert("Wrong answer");
     secondsLeft = secondsLeft - 10;
     }
  }
-
-
+ 
+function saveHighscore(){
+   
+   localStorage.setItem(initials, highScore)
+   console.log(initials, highScore)
+   
+}
  // if time = 0 then ##################
 
 //DISPLAY OF OPTIONS (BUTTONS)
@@ -138,11 +150,14 @@ let highScore = 0;
 
 // Action to be performed on click store in named function
 function endQuiz() {
+    questionTitle = ""
+    let initials = prompt('what is your initials?')
+    saveHighscore()
     const response =
-    "Thank you for your submitting your answers! " +
-    " Your HighScore is " + highScore;
-
+    "Thank you for your submitting your answers " + initials +
+    " ,Your HighScore is " + highScore;
   alert(response);
+  //clearInterval(timer);
   }
 
 
